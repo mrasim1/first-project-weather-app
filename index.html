@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast Weather</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-icon">☀</span> SkyCast</a>
+      <span class="live-label"><span class="dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR DAILY FORECAST</p>
+      <h1>Weather, at a glance.</h1>
+      <p class="subtitle">Find the weather anywhere in the world.</p>
+
+      <form id="search-form" class="search">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="city-input" type="text" placeholder="Search a city, e.g. Karachi" aria-label="City name" required />
+        <button type="submit" id="search-button">Search <span aria-hidden="true">→</span></button>
+      </form>
+      <button id="location-button" class="location-button" type="button">◎ Use my location</button>
+      <p id="message" class="message" role="status">Try searching for Karachi, London, or Tokyo.</p>
+    </section>
+
+    <section id="weather-panel" class="weather-panel" hidden aria-live="polite">
+      <div class="current-card">
+        <div class="current-heading">
+          <div>
+            <p class="eyebrow">CURRENT WEATHER</p>
+            <h2 id="place-name">Karachi, Pakistan</h2>
+            <p id="current-date" class="muted">Today</p>
+          </div>
+          <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+        </div>
+        <div class="temperature-row">
+          <div id="temperature" class="temperature">--°</div>
+          <div>
+            <p id="condition" class="condition">Loading...</p>
+            <p id="feels-like" class="muted">Feels like --°C</p>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="details">
+          <div class="detail-item"><span class="detail-icon">💧</span><div><p class="detail-label">Humidity</p><strong id="humidity">--%</strong></div></div>
+          <div class="detail-item"><span class="detail-icon">🌬️</span><div><p class="detail-label">Wind speed</p><strong id="wind">-- km/h</strong></div></div>
+          <div class="detail-item"><span class="detail-icon">☁️</span><div><p class="detail-label">Cloud cover</p><strong id="cloud">--%</strong></div></div>
+        </div>
+      </div>
+
+      <section class="forecast-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">PLAN AHEAD</p><h2>5-day forecast</h2></div>
+          <span class="muted">Daily outlook</span>
+        </div>
+        <div id="forecast" class="forecast-grid"></div>
+      </section>
+    </section>
+
+    <footer>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a> · Made for curious skies</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
